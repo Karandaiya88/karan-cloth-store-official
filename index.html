@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Karan Cloth Store | Premium Men's Tailoring & Fabric, Jodhpur</title>
+<meta name="description" content="Jodhpur ka premium men's cloth store. Custom tailoring, sherwani, suits, fabric — sab ek hi jagah. Karan Cloth Store."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;
+  --navy-deep:#0F1C32;
+  --gold:#B8965A;
+  --gold-light:#D4AE78;
+  --cream:#F8F4EE;
+  --cream-dark:#EDE5D8;
+  --text-dark:#1B2A4A;
+  --text-mid:#4A5568;
+  --text-light:#8A97A8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s ease;background:transparent}
+#nav.scrolled{background:var(--navy-deep);box-shadow:0 2px 24px rgba(0,0,0,0.3)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-mark{width:42px;height:42px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--navy-deep);flex-shrink:0}
+.nav-logo-text{line-height:1}
+.nav-logo-text .name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:2px;text-transform:uppercase;display:block}
+.nav-logo-text .sub{font-size:0.62rem;color:var(--gold-light);letter-spacing:4px;text-transform:uppercase;display:block;margin-top:2px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{background:var(--gold);color:var(--navy-deep);border:none;padding:0.6rem 1.4rem;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--gold-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:#fff;transition:all 0.3s}
+
+/* ── HERO ── */
+#hero{min-height:100vh;background:var(--navy-deep);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(184,150,90,1) 60px,rgba(184,150,90,1) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(184,150,90,1) 60px,rgba(184,150,90,1) 61px)}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(184,150,90,0.12) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(27,42,74,0.8) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:8rem 4rem 4rem;max-width:1100px;margin:0 auto;width:100%}
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow span{font-size:0.7rem;letter-spacing:5px;color:var(--gold-light);text-transform:uppercase}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:600;line-height:1.05;color:#fff;margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.55);max-width:480px;line-height:1.8;margin-bottom:3rem;font-weight:300;opacity:0;animation:fadeUp 0.8s 0.6s forwards}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards}
+.btn-gold{background:var(--gold);color:var(--navy-deep);padding:1rem 2.5rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline-w{background:transparent;color:#fff;padding:1rem 2.5rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.35);cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.3s}
+.btn-outline-w:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.hero-stats{position:absolute;bottom:3rem;right:4rem;display:flex;gap:3rem;opacity:0;animation:fadeUp 0.8s 1s forwards}
+.hero-stat-item{text-align:right}
+.hero-stat-item strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
+.hero-stat-item span{font-size:0.65rem;letter-spacing:3px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:4px;display:block}
+.hero-scroll{position:absolute;bottom:3rem;left:4rem;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp 0.8s 1.2s forwards}
+.hero-scroll span{font-size:0.6rem;letter-spacing:4px;color:rgba(255,255,255,0.3);text-transform:uppercase;writing-mode:vertical-lr}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 2s infinite}
+
+/* ── SECTION BASE ── */
+.section{padding:6rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.65rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:block}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1rem}
+.section-title em{color:var(--gold);font-style:italic}
+.gold-rule{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.gold-rule::before,.gold-rule::after{content:'';flex:1;height:1px;background:var(--cream-dark)}
+.gold-rule-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+
+/* ── ABOUT ── */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img-stack{position:relative;height:480px}
+.about-img-main{position:absolute;top:0;left:0;right:80px;bottom:80px;background:var(--navy);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-img-accent{position:absolute;bottom:0;right:0;width:200px;height:200px;background:var(--gold);opacity:0.15}
+.about-img-label{position:absolute;bottom:90px;left:-20px;background:var(--gold);padding:1rem 1.5rem;z-index:2}
+.about-img-label strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy-deep);font-weight:700;line-height:1}
+.about-img-label span{font-size:0.65rem;letter-spacing:3px;color:var(--navy-deep);text-transform:uppercase;opacity:0.7}
+.about-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:rgba(255,255,255,0.2)}
+.about-placeholder svg{width:48px;height:48px;opacity:0.3}
+.about-placeholder p{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase}
+.about-text p{color:var(--text-mid);line-height:1.9;margin-bottom:1.5rem;font-weight:300;font-size:0.95rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.about-feat{display:flex;align-items:flex-start;gap:0.75rem}
+.feat-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+.about-feat p{font-size:0.85rem;color:var(--text-mid);font-weight:400}
+
+/* ── SERVICES ── */
+#services{background:var(--cream)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--cream-dark)}
+.service-card{background:var(--cream);padding:3rem 2.5rem;transition:all 0.3s;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width 0.4s ease}
+.service-card:hover::after{width:100%}
+.service-card:hover{background:#fff}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:var(--cream-dark);line-height:1;margin-bottom:1rem;transition:color 0.3s}
+.service-card:hover .service-num{color:rgba(184,150,90,0.15)}
+.service-icon{width:48px;height:48px;margin-bottom:1.5rem}
+.service-icon svg{width:100%;height:100%}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem}
+.service-card p{font-size:0.85rem;color:var(--text-mid);line-height:1.8;font-weight:300}
+.service-tag{display:inline-block;margin-top:1.5rem;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+/* ── GROOM PACKAGE ── */
+#groom{background:var(--navy-deep);position:relative;overflow:hidden}
+#groom .hero-bg-pattern{opacity:0.03}
+.groom-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.groom-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(184,150,90,0.15);border:1px solid rgba(184,150,90,0.3);padding:0.4rem 1rem;margin-bottom:1.5rem}
+.groom-badge span{font-size:0.62rem;letter-spacing:4px;color:var(--gold-light);text-transform:uppercase}
+.groom-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;color:#fff;line-height:1.1;margin-bottom:1.5rem}
+.groom-title em{color:var(--gold);font-style:italic}
+.groom-desc{color:rgba(255,255,255,0.5);font-size:0.92rem;line-height:1.9;font-weight:300;margin-bottom:2.5rem}
+.groom-items{display:flex;flex-direction:column;gap:0}
+.groom-item{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(184,150,90,0.12)}
+.groom-item:first-child{border-top:1px solid rgba(184,150,90,0.12)}
+.groom-item-num{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(184,150,90,0.4);font-weight:600;min-width:28px}
+.groom-item p{font-size:0.85rem;color:rgba(255,255,255,0.65);font-weight:300}
+.groom-visual{background:rgba(184,150,90,0.06);border:1px solid rgba(184,150,90,0.15);aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;position:relative;overflow:hidden}
+.groom-visual::before{content:'KCS';font-family:'Cormorant Garamond',serif;font-size:8rem;font-weight:700;color:rgba(184,150,90,0.05);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:-4px}
+.groom-visual-icon{font-size:3rem;opacity:0.4}
+.groom-visual p{font-size:0.7rem;letter-spacing:4px;color:rgba(184,150,90,0.4);text-transform:uppercase;text-align:center}
+.groom-visual-corner{position:absolute;top:1.5rem;right:1.5rem;width:24px;height:24px;border-top:1px solid rgba(184,150,90,0.3);border-right:1px solid rgba(184,150,90,0.3)}
+.groom-visual-corner2{position:absolute;bottom:1.5rem;left:1.5rem;width:24px;height:24px;border-bottom:1px solid rgba(184,150,90,0.3);border-left:1px solid rgba(184,150,90,0.3)}
+
+/* ── GALLERY ── */
+#gallery{background:#fff}
+.gallery-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+.gallery-note{font-size:0.8rem;color:var(--text-light);font-style:italic}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:4px}
+.gallery-cell{background:var(--cream-dark);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;cursor:pointer}
+.gallery-cell:first-child{grid-row:span 2}
+.gallery-cell::after{content:'Add Photo';position:absolute;inset:0;background:rgba(27,42,74,0);display:flex;align-items:center;justify-content:center;font-size:0.7rem;letter-spacing:3px;color:transparent;text-transform:uppercase;transition:all 0.3s}
+.gallery-cell:hover::after{background:rgba(27,42,74,0.7);color:var(--gold-light)}
+.gallery-placeholder{display:flex;flex-direction:column;align-items:center;gap:0.75rem;color:var(--text-light);pointer-events:none}
+.gallery-placeholder svg{width:32px;height:32px;opacity:0.4}
+.gallery-placeholder span{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6}
+.gallery-cell:first-child .gallery-placeholder svg{width:48px;height:48px}
+
+/* ── CONTACT ── */
+#contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:2rem}
+.contact-item{display:flex;gap:1.5rem;align-items:flex-start}
+.contact-item-icon{width:44px;height:44px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item-icon svg{width:20px;height:20px;fill:var(--gold)}
+.contact-item h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:0.3rem;letter-spacing:1px}
+.contact-item p,.contact-item a{font-size:0.88rem;color:var(--text-mid);font-weight:300;line-height:1.7;text-decoration:none}
+.contact-item a:hover{color:var(--gold)}
+.contact-wa-btn{display:flex;align-items:center;gap:0.75rem;background:#25D366;color:#fff;padding:1.1rem 2rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;width:fit-content;margin-top:1rem}
+.contact-wa-btn:hover{background:#1DA851;transform:translateY(-2px)}
+.contact-wa-btn svg{width:20px;height:20px;fill:#fff}
+.map-placeholder{background:var(--navy);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden}
+.map-placeholder::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 30px,rgba(184,150,90,0.05) 30px,rgba(184,150,90,0.05) 31px),repeating-linear-gradient(90deg,transparent,transparent 30px,rgba(184,150,90,0.05) 30px,rgba(184,150,90,0.05) 31px)}
+.map-pin{width:40px;height:40px;background:var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg);position:relative;z-index:2}
+.map-pin::after{content:'';width:16px;height:16px;background:var(--navy-deep);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.map-label{font-size:0.75rem;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;z-index:2}
+.map-cta{background:rgba(184,150,90,0.15);border:1px solid rgba(184,150,90,0.3);color:var(--gold-light);padding:0.7rem 1.5rem;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;z-index:2;transition:all 0.3s}
+.map-cta:hover{background:rgba(184,150,90,0.25)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-deep);padding:3rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+.footer-logo span{display:block;font-size:0.6rem;letter-spacing:5px;color:rgba(255,255,255,0.3);font-family:'Jost',sans-serif;margin-top:4px}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.2);letter-spacing:1px;width:100%;text-align:center;padding-top:2rem;border-top:1px solid rgba(184,150,90,0.1);margin-top:1rem}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollLine{0%{transform:scaleY(1);transform-origin:top}50%{transform:scaleY(0.5);transform-origin:top}51%{transform:scaleY(0.5);transform-origin:bottom}100%{transform:scaleY(1);transform-origin:bottom}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-inner{padding:7rem 1.5rem 5rem}
+  .hero-stats{position:static;flex-direction:row;justify-content:flex-start;gap:2rem;margin-top:3rem;opacity:1;animation:none}
+  .hero-scroll{display:none}
+  .about-grid,.groom-inner,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .about-img-stack{height:280px}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gallery-cell:first-child{grid-row:span 1}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  .section{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-mark">K</div>
+    <div class="nav-logo-text">
+      <span class="name">Karan</span>
+      <span class="sub">Cloth Store</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#groom">Groom</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/917XXXXXXXXX" class="nav-cta">WhatsApp</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Jodhpur, Rajasthan &nbsp;·&nbsp; Est. Since Years</span>
+    </div>
+    <h1 class="hero-h1">
+      The Art of the<br>
+      <em>Perfect Fit</em>
+    </h1>
+    <p class="hero-sub">Premium fabrics, precision tailoring, aur bespoke groom wear — sab kuch ek hi jagah se, Jodhpur mein.</p>
+    <div class="hero-actions">
+      <a href="#groom" class="btn-gold">Groom Packages</a>
+      <a href="#contact" class="btn-outline-w">Visit The Store</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <strong>10+</strong>
+        <span>Years Legacy</span>
+      </div>
+      <div class="hero-stat-item">
+        <strong>500+</strong>
+        <span>Happy Clients</span>
+      </div>
+      <div class="hero-stat-item">
+        <strong>100%</strong>
+        <span>Custom Fit</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-stack reveal">
+        <div class="about-img-main">
+          <div class="about-placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <p>Shop Photo</p>
+          </div>
+        </div>
+        <div class="about-img-accent"></div>
+        <div class="about-img-label">
+          <strong>10+</strong>
+          <span>Years of Craft</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Where <em>Tradition</em> Meets Precision</h2>
+        <div class="gold-rule"><div class="gold-rule-diamond"></div></div>
+        <p>Karan Cloth Store Jodhpur ki ek trusted men's clothing destination hai jahan hum sirf kapda nahi, ek experience dete hain. Hamare father ke haathon se shuru hua ye safar aaj bhi usi dedication ke saath jari hai.</p>
+        <p>Har customer ki measurements, preferences, aur style ko dhyan mein rakhte hue hum har suit, sherwani, ya kurta tayyar karte hain — bilkul aapke liye, bilkul sahi fit mein.</p>
+        <div class="about-features">
+          <div class="about-feat"><div class="feat-dot"></div><p>Premium Imported Fabrics</p></div>
+          <div class="about-feat"><div class="feat-dot"></div><p>Experienced Master Tailors</p></div>
+          <div class="about-feat"><div class="feat-dot"></div><p>Custom Measurements Recorded</p></div>
+          <div class="about-feat"><div class="feat-dot"></div><p>Wedding Specialists</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:4rem" class="reveal">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Our <em>Services</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3>Premium Fabric</h3>
+        <p>Pant, shirt, suit ke liye finest fabrics — pure wool, linen, cotton blends, aur luxury suiting material. Har fabric carefully curated.</p>
+        <span class="service-tag">Explore Fabrics →</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <h3>Custom Tailoring</h3>
+        <p>Aapki exact measurements ke hisaab se tailored suits, shirts, kurtas, aur trousers. Har piece unique, har fit perfect.</p>
+        <span class="service-tag">Book Appointment →</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <h3>Groom Wear</h3>
+        <p>Sherwani, bandhgala, achkan, aur indo-western — wedding day ke liye har style available. Aapka look, aapka moment.</p>
+        <span class="service-tag">View Packages →</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <h3>Alterations</h3>
+        <p>Purane suit ko nayi jaan dein. Expert alteration service — waist, length, sleeves — sab kuch bilkul precise.</p>
+        <span class="service-tag">Get It Fixed →</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <h3>Corporate Formals</h3>
+        <p>Office ke liye professional suits, trousers, aur dress shirts. Bulk orders welcome with special pricing.</p>
+        <span class="service-tag">Enquire Now →</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <h3>Style Consultation</h3>
+        <p>Kuch samajh nahi aa raha? Hamare experts se free consultation lein — colour, cut, aur occasion ke hisaab se guidance.</p>
+        <span class="service-tag">Talk To Us →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROOM PACKAGE -->
+<section id="groom" class="section">
+  <div class="hero-bg-pattern"></div>
+  <div class="section-inner">
+    <div class="groom-inner">
+      <div class="reveal">
+        <div class="groom-badge">
+          <span>★ Most Popular</span>
+        </div>
+        <h2 class="groom-title">The Complete<br><em>Groom Package</em></h2>
+        <p class="groom-desc">Aapke wedding day ka har look hamare haath mein. Sherwani se lekar accessories tak — ek hi jagah se, ek seamless experience mein.</p>
+        <div class="groom-items">
+          <div class="groom-item"><span class="groom-item-num">01</span><p>Custom Sherwani / Bandhgala / Suit (choice yours)</p></div>
+          <div class="groom-item"><span class="groom-item-num">02</span><p>Matching Dupatta / Stole with embroidery</p></div>
+          <div class="groom-item"><span class="groom-item-num">03</span><p>Pocket Square + Cufflinks (complimentary)</p></div>
+          <div class="groom-item"><span class="groom-item-num">04</span><p>2 Free Alterations before the big day</p></div>
+          <div class="groom-item"><span class="groom-item-num">05</span><p>Priority delivery with dedicated tailor</p></div>
+        </div>
+        <a href="https://wa.me/917XXXXXXXXX?text=Groom%20Package%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="btn-gold" style="margin-top:2.5rem;display:inline-block">Book Groom Consultation</a>
+      </div>
+      <div class="groom-visual reveal">
+        <div class="groom-visual-corner"></div>
+        <div class="groom-visual-corner2"></div>
+        <div class="groom-visual-icon">👑</div>
+        <p>Groom Photo<br>Coming Soon</p>
+        <div style="font-size:0.65rem;letter-spacing:3px;color:rgba(184,150,90,0.3);text-transform:uppercase">Add sherwani photo here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="section-inner">
+    <div class="gallery-top reveal">
+      <div>
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">The <em>Gallery</em></h2>
+      </div>
+      <p class="gallery-note">Photos coming soon — baad mein add karein</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-cell">
+        <div class="gallery-placeholder">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          <span>Featured Work</span>
+        </div>
+      </div>
+      <div class="gallery-cell"><div class="gallery-placeholder"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Suit</span></div></div>
+      <div class="gallery-cell"><div class="gallery-placeholder"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Sherwani</span></div></div>
+      <div class="gallery-cell"><div class="gallery-placeholder"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Fabric</span></div></div>
+      <div class="gallery-cell"><div class="gallery-placeholder"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg><span>Store</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:4rem" class="reveal">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Visit the <em>Store</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+917XXXXXXXXX">+91 7XX-XXXX-XXX</a><br>
+            <a href="tel:+917XXXXXXXXX" style="margin-top:4px;display:block">+91 7XX-XXXX-XXX (Alt)</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p>Karan Cloth Store,<br>Jodhpur, Rajasthan — 342XXX</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Monday – Saturday: 10am – 8pm<br>Sunday: 11am – 6pm</p>
+          </div>
+        </div>
+        <a href="https://wa.me/917XXXXXXXXX?text=Hello%2C%20Karan%20Cloth%20Store%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="contact-wa-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Pe Enquire Karein
+        </a>
+      </div>
+      <div class="reveal">
+        <div class="map-placeholder">
+          <div class="map-pin"></div>
+          <p class="map-label">Karan Cloth Store</p>
+          <a href="YOUR_GOOGLE_MAPS_LINK" class="map-cta" target="_blank">Open in Google Maps →</a>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-light);margin-top:0.75rem;letter-spacing:1px">GBP setup hone ke baad yahan Google Maps embed karein</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Karan Cloth Store<span>Jodhpur, Rajasthan</span></div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#groom">Groom</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Karan Cloth Store · All Rights Reserved · Jodhpur, Rajasthan</p>
+  </div>
+</footer>
+
+<script>
+// Sticky nav
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)
+})
+// Reveal on scroll
+const reveals=document.querySelectorAll('.reveal')
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.12})
+reveals.forEach(r=>obs.observe(r))
+// Mobile menu
+function toggleMenu(){document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'}
+</script>
+</body>
+</html>
